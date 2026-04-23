@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M Digital Solution</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 🌈 Background */
+body {
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0072ff);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+    color: white;
+}
+
+@keyframes bgMove {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00c6ff;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 55px;
+}
+
+/* Button */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg,#00c6ff,#0072ff);
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Cards */
+.card {
+    display: inline-block;
+    width: 280px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Portfolio */
+.portfolio img {
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Contact */
+input, textarea {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+}
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animation */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media(max-width:768px){
+    header {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="Mds.jpg">
+        <h2>M Digital Solution</h2>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>We Build Powerful Digital Brands</h1>
+    <p>Design | Development | Marketing</p>
+    <a href="#contact" class="btn">Get Started</a>
+</section>
+
+<section id="services" class="fade">
+    <h2>Our Services</h2>
+
+    <div class="card">
+        <h3>🎨 Graphic Design</h3>
+        <p>Logo, branding & social media</p>
+    </div>
+
+    <div class="card">
+        <h3>💻 Web Development</h3>
+        <p>Modern responsive websites</p>
+    </div>
+
+    <div class="card">
+        <h3>📱 Marketing</h3>
+        <p>Grow your business online</p>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio fade">
+    <h2>Our Work</h2>
+    <img src="https://via.placeholder.com/250">
+    <img src="https://via.placeholder.com/250">
+    <img src="https://via.placeholder.com/250">
+</section>
+
+<section id="about" class="fade">
+    <h2>About Us</h2>
+    <p>M Digital Solution delivers high-quality digital services to grow your business.</p>
+</section>
+
+<section id="contact" class="fade">
+    <h2>Contact Us</h2>
+
+    <form action="mailto:1951ashrafkhan@gmail.com" method="post">
+        <input type="text" placeholder="Name"><br>
+        <input type="email" placeholder="Email"><br>
+        <textarea placeholder="Message"></textarea><br>
+        <button>Send Message</button>
+    </form>
+</section>
+
+<a href="https://wa.me/923100678730" class="whatsapp">💬</a>
+
+<footer>
+    <p>© 2026 M Digital Solution</p>
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
